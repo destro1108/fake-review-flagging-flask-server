@@ -8,4 +8,4 @@ def hello_world():
 
 @app.route("/ping")
 def ping_demo():
-  return {"statusCode":,"status":"Connected","message":"Live!!!"}
+  return {"statusCode":200,"status":"Connected","message":"Live!!!"}
