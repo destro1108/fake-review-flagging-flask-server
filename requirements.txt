@@ -4,4 +4,3 @@ Werkzeug
 sklearn
 nltk
 numpy
-pickle
