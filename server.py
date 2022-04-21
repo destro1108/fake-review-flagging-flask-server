@@ -120,9 +120,9 @@ print("done")
 sample1=['']
 #__________________________________________________________________________________________________________________________
 
-# Pkl_Filename = "Pickle_RL_Model.pkl"  
-# with open(Pkl_Filename, 'rb') as file:  
-#     Pickled_LR_Model = pickle.load(file)
+Pkl_Filename = "Pickle_RL_Model.pkl"  
+with open(Pkl_Filename, 'rb') as file:  
+    Pickled_LR_Model = pickle.load(file)
 
 def predictLabels(reviewSamples, classifier):
     return classifier.classify_many(map(lambda t: t[0], reviewSamples))
@@ -145,8 +145,8 @@ def getpred():
         reviewText = loadData(reviewLine)
 
         # return {"data":reviewText};
-        # prediction = predictLabels(reviewText,Pickled_LR_Model)[0]
-        prediction = "fake"
+        prediction = predictLabels([reviewText],Pickled_LR_Model)[0]
+        # prediction = "fake"
         print(prediction)
         return {"review_title":request.json['review_title'],"product_title":request.json['product_title'],"review_status":prediction.upper()}
         # return 'The review ' + '"'+ reviewText + '"' + ' is ' + out1[0].upper()
